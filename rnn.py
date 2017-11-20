@@ -221,7 +221,7 @@ train_with_sgd(model, x_train, y_train, nepoch=100, evaluate_loss_after=1)
 
 def generate_sentence(model):
     # We start the sentence with the start token
-    ns = ['nice', card_end, card_start]
+    ns = [card_start]
     new_sentence = [word_to_index[i] for i in ns]
     # Repeat until we get an end token
     while not new_sentence[-1] == word_to_index[card_end]:
@@ -254,5 +254,5 @@ for i in range(num_sentences):
     # We want long sentences, not sentences with one or two words
     while len(sent) < senten_min_length:
         sent = generate_sentence(model)
-    print(" ".join(sent) + " :computer:")
+    print(" ".join(sent))
     print("")

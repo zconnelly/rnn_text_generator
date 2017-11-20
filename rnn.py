@@ -215,7 +215,7 @@ print("Actual loss: %f" % model.calculate_loss(x_train[:1000], y_train[:1000]))
 """
 np.random.seed(10)
 model = RNN(vocabulary_size)
-train_with_sgd(model, x_train, y_train, nepoch=100, evaluate_loss_after=1)
+train_with_sgd(model, x_train, y_train, nepoch=100, evaluate_loss_after=5)
 """
 
 
